@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="SinaNewsDefault">#ef3744</color>
+    <!--标题的颜色-->
+    <color name="SinaNewsDefaultTitle">#2e2e2e</color>
+    <!--评论的颜色-->
+    <color name="SinaNewsDefaultComment">#b8b8b8</color>
+    <!--显示几张图的半透明背景颜色-->
+    <color name="SinaNewsDefaultTotal">#aa000000</color>
+    <!--Item默认背景颜色-->
+    <color name="SinaNewsDefaultItemBG">#fdfdfe</color>
+    <!--tabLayout的默认字体颜色-->
+    <color name="SinaNewsDefaultTabTitle">#747474</color>
+    <!--赞助的颜色-->
+    <color name="SinaNewsSponsorColor">#FF8F00</color>
+    <!--策划，专题  精读的颜色-->
+    <color name="SinaNewsCommonColor">#F84C4B</color>
+</resources>

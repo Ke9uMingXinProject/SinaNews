@@ -1,0 +1,32 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.sn.sinanews.fragments.PicItemsFragment"
+    android:id="@+id/fragment_pic_items_coordinatorLayout">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/fragment_pic_items_swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/fragment_pic_items_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="LinearLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            />
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/fragment_pic_items_floatingActionButton"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginRight="16dp"-->
+        <!--android:layout_marginBottom="16dp"-->
+        <!--app:backgroundTint="@color/SinaNewsDefaultItemBG"-->
+        <!--android:src="@mipmap/widget_container_refresh_btn"-->
+        <!--app:layout_anchor="@id/fragment_pic_items_coordinatorLayout"-->
+        <!--app:layout_anchorGravity="right|bottom" />-->
+</android.support.design.widget.CoordinatorLayout>

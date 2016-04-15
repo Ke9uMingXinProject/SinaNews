@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/SinaNewsDefaultItemBG"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin">
+
+    <!-- 显示视频的 的图片  -->
+    <TextView
+        android:id="@+id/video_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="显示标题"
+        android:textColor="@color/SinaNewsDefaultTitle"
+        android:textSize="18sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:background="@color/SinaNewsDefaultTitle">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- 这里不可以用 wrap_parent  -->
+            <SurfaceView
+                android:id="@+id/video_sv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"/>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/video_pic_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:actualImageScaleType="centerCrop"/>
+
+            <LinearLayout
+                android:id="@+id/video_body_play_correct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+
+                <ProgressBar
+                    android:id="@+id/video_item_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开始加载"
+                    android:textColor="@color/SinaNewsDefaultItemBG"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/video_body_play_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/play_error_tip"
+                    android:text="  播放错误，请点击重试。"/>
+
+                <ImageButton
+                    android:id="@+id/video_error_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@mipmap/btn_retry_play"/>
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/video_item_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:src="@drawable/selector_video_play"/>
+
+        </FrameLayout>
+
+        <ProgressBar
+            android:layout_alignParentBottom="true"
+            android:id="@+id/footerLinear_progressBar"
+            android:layout_width="match_parent"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:minHeight="10dp"
+            android:layout_height="2dp"/>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/video_footer_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#77000000"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/video_footer_item_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/selector_video_footer_play"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/video_footer_time_pro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="00:00/03:26"
+                    android:textColor="@color/SinaNewsDefaultItemBG"/>
+
+                <!--
+                    android:progressDrawable="@drawable/seekbar_style"
+                    android:thumb="@android:drawable/ic_notification_overlay"
+                    android:thumbOffset="0dp"
+                -->
+
+                <SeekBar
+                    android:id="@+id/video_footer_seekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    android:progress="20"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    />
+
+                <ImageButton
+                    android:id="@+id/video_footer_full"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:background="@null"
+                    android:src="@drawable/selector_video_footer_full"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/video_text_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30条评论"
+            android:textColor="@color/SinaNewsDefaultComment"
+            android:textSize="12sp"/>
+
+        <ImageButton
+            android:id="@+id/image_text_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@null"
+            android:src="@mipmap/ic_list_item_video_category"/>
+    </LinearLayout>
+
+</LinearLayout>

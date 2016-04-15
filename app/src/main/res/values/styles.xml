@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!-- 设置actionBar下的阴影为空，5.0以上在代码中定义-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimary">@color/SinaNewsDefaultItemBG</item>
+        <item name="colorPrimaryDark">@color/SinaNewsDefaultTitle</item>
+        <item name="colorAccent">@color/SinaNewsDefault</item>
+    </style>
+    <!-- 设置TabLayout字体的大小-->
+    <style name="PicTabLayoutTextSize" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+</resources>

@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context="com.sn.sinanews.fragments.PicturesFragment">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pic_appBarLayout"
+        android:fitsSystemWindows="true">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:layout_collapseMode="pin"
+            android:id="@+id/pic_toolBar"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <TextView
+                android:id="@+id/pic_toolBar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="图片"/>
+
+            <LinearLayout
+                android:id="@+id/pic_toolBar_linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/pic_toolBar_intro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="intro"
+                    android:textColor="@color/SinaNewsDefault"
+                    android:textSize="16sp"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/pic_toolBar_horizontalPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/pic_coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/pic_appBarLayout">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+            <android.support.design.widget.TabLayout
+                android:id="@+id/pic_tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlways"
+                android:background="@color/SinaNewsDefaultItemBG"
+                app:tabIndicatorColor="@color/SinaNewsDefault"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/SinaNewsDefault"
+                app:tabTextAppearance="@style/PicTabLayoutTextSize"
+                app:tabTextColor="@color/SinaNewsDefaultTitle"/>
+            </android.support.design.widget.AppBarLayout>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pic_viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/pic_floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="16dp"
+            android:src="@mipmap/widget_container_refresh_btn"
+            app:backgroundTint="@color/SinaNewsDefaultItemBG"
+            app:layout_anchor="@id/pic_coordinatorLayout"
+            app:layout_anchorGravity="right|bottom"/>
+    </android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

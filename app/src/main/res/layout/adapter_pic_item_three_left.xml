@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" android:background="@color/SinaNewsDefaultItemBG"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent" android:orientation="horizontal"
+            android:layout_height="wrap_content" android:layout_marginTop="6dp" android:layout_marginBottom="8dp"
+            >
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:layout_marginRight="3dp"
+                android:scaleType="centerCrop"
+                app:placeholderImage="@mipmap/living_feed_single_portrait_default"
+                app:failureImage="@mipmap/living_feed_single_portrait_default"
+                android:id="@+id/adapter_pic_item_img3"/>
+            <LinearLayout
+                android:layout_width="0dp" android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:placeholderImage="@mipmap/living_feed_single_portrait_default"
+                    app:failureImage="@mipmap/living_feed_single_portrait_default"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/adapter_pic_item_img1"/>
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginTop="3dp"
+                    app:placeholderImage="@mipmap/living_feed_single_portrait_default"
+                    app:failureImage="@mipmap/living_feed_single_portrait_default"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/adapter_pic_item_img2"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff" android:paddingRight="3dp" android:paddingLeft="3dp"
+            android:text="9图" android:layout_marginBottom="15dp" android:layout_marginRight="3dp"
+            android:background="@color/SinaNewsDefaultTotal" android:layout_gravity="right|bottom"
+            android:id="@+id/adapter_pic_item_pics_total"/>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/SinaNewsDefaultTitle"
+            android:textSize="20sp"
+            android:lines="1" android:text="title"
+            android:id="@+id/adapter_pic_item_title"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/SinaNewsDefaultComment" android:text="comment"
+            android:layout_alignParentRight="true"
+            android:id="@+id/adapter_pic_item_comment"/>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="intro"
+            android:layout_below="@id/adapter_pic_item_title"
+            android:id="@+id/adapter_pic_item_intro"/>
+    </RelativeLayout>
+</LinearLayout>

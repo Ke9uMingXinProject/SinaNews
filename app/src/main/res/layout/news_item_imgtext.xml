@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/SinaNewsDefaultItemBG"
+    android:orientation="horizontal">
+
+
+    <!-- 图片 和 文字  可以 显示评论 显示 视频 和 策划  专题-->
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/image_text_image"
+        android:layout_width="84dp"
+        android:layout_height="match_parent"
+        app:actualImageScaleType="centerCrop" />
+
+    <RelativeLayout
+        android:layout_marginLeft="10dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/image_text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="显示标题"
+            android:textColor="@color/SinaNewsDefaultTitle"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/image_text_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_text_title"
+            android:ellipsize="end"
+            android:lines="2"
+            android:text="显示显示内容"
+            android:textColor="@color/SinaNewsDefaultTabTitle"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:id="@+id/image_text_footer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/image_text_comments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="30条评论"
+                android:textColor="@color/SinaNewsDefaultComment"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:id="@+id/image_text_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@mipmap/ic_list_item_bg_red"
+                android:text="专题"
+                android:textColor="@color/SinaNewsCommonColor"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:layout_marginLeft="5dp"
+                android:visibility="gone"
+                android:id="@+id/image_text_video"
+                android:src="@mipmap/ic_list_item_video_category"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
